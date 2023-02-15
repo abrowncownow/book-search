@@ -1,4 +1,4 @@
-import {User} from '../models/index';
+const User = require('../models/index');
 
 const resolvers = {
     Query: {
