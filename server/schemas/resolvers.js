@@ -1,4 +1,4 @@
-const User = require('../models/index');
+const {User} = require('../models/index');
 const {signToken} = require('../utils/auth');
 const {AuthenticationError} = require('apollo-server-express');
 
@@ -19,10 +19,11 @@ const resolvers = {
             const user = await User.findOne({email});
             if (!user){throw new AuthenticationError("Email doesn't exist")};
             const confPW = await user.isCorrectPassword(password);
-            if (!conftPW){
+            if (!confPW){
                 throw new AuthenticationError("Password didn't match. Try again.");
             }
             const token = signToken(user);
+            console.log('logged in')
             return {token, user};
         },
 
