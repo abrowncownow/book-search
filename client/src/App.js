@@ -33,11 +33,11 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route exact
+            <Route
               path='/' 
               element={<SearchBooks />} 
             />
-            <Route exact
+            <Route
               path='/saved' 
               element={<SavedBooks />} 
             />

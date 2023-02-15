@@ -5,11 +5,12 @@ const {AuthenticationError} = require('apollo-server-express');
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
+            console.log(context.user)
             if (!context.user){
                 throw new AuthenticationError("Not logged in");
                 }
-            
-            return await User.findbyID(context.user._id).populate('books');
+
+            return await User.findById(context.user._id).populate("books");
         },
 
     },
