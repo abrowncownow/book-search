@@ -20,5 +20,8 @@
     "apollo-server-express": "^3.11.1",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0"
+  },
+  "engines": {
+    "node": "16.16.0"
   }
 }
